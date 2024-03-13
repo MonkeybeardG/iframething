@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fullscreen IFrame</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f2f2f2;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    input[type="url"] {
+        padding: 10px;
+        margin-right: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        width: 300px;
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    iframe {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+<input type="url" id="urlInput" placeholder="Enter URL">
+<input type="submit" value="Submit" onclick="openFullscreenIframe()">
+<iframe id="fullscreenIframe"></iframe>
+</div>
+<script>
+function openFullscreenIframe() {
+    const url = document.getElementById("urlInput").value;
+    document.getElementById("fullscreenIframe").src = url;
+    document.getElementById("fullscreenIframe").requestFullscreen();
+}
+</script>
+</body>
+</html>
